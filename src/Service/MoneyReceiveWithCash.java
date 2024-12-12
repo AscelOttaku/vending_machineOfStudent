@@ -2,6 +2,7 @@ package Service;
 
 import model.Products.CoinAcceptor;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MoneyReceiveWithCash extends MoneyReceiverSystem {
@@ -24,11 +25,10 @@ public class MoneyReceiveWithCash extends MoneyReceiverSystem {
                 this.cash = cash;
                 return;
 
-            } catch (IllegalArgumentException e) {
+            } catch (InputMismatchException | IllegalArgumentException e) {
                 sc.nextLine();
-                String msg = e.getMessage() == null ? "undefined": e.getMessage();
+                String msg = e.getMessage() == null ? "Value should be an Integer": e.getMessage();
                 System.out.println("Invalid input: ");
-                System.out.println("Enter Integer Number");
                 System.out.println("Cause: " + msg);
             }
         }
