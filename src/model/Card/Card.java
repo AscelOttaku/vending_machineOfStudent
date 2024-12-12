@@ -1,7 +1,7 @@
 package model.Card;
 
 public class Card {
-    private String cardName;
+    private final String cardName;
     private String password;
     private double balance;
 
@@ -21,5 +21,9 @@ public class Card {
 
     public double getBalance() {
         return balance;
+    }
+
+    public String getCardName() {
+        return cardName;
     }
 }
