@@ -5,13 +5,14 @@ import model.Products.*;
 import util.UniversalArray;
 import util.UniversalArrayImpl;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AppRunner {
 
     private final UniversalArray<Product> products = new UniversalArrayImpl<>();
 
-    private final CoinAcceptor coinAcceptor;
+    private static CoinAcceptor coinAcceptor;
 
     private static boolean isExit = false;
 
@@ -29,9 +30,40 @@ public class AppRunner {
 
     public static void run() {
         AppRunner app = new AppRunner();
+
+
+        MoneyReceiverSystem moneyReceiverSystem = choosePayMethod();
+        moneyReceiverSystem.getUserInput();
+
+        moneyReceiverSystem.transfer(coinAcceptor);
+
         while (!isExit) {
             app.startSimulation();
         }
+    }
+
+    private static MoneyReceiverSystem choosePayMethod() {
+        Scanner scanner = new Scanner(System.in);
+
+       while (true) {
+           System.out.println("Choose Pay Method: ");
+           System.out.println("1. Card\n2. Cash");
+           String choice = "";
+
+           try {
+               choice = scanner.nextLine();
+           } catch (InputMismatchException e) {
+               System.out.println("illegal argument was sent");
+           }
+           switch (choice) {
+               case "1":
+                   return new MoneyReceiveWithCard();
+               case "2":
+                   return new MoneyReceiveWithCash();
+               default:
+                   System.out.println("illegal argument was sent");
+           }
+       }
     }
 
     private void startSimulation() {
