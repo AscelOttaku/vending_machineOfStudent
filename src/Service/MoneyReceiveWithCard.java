@@ -16,20 +16,24 @@ public class MoneyReceiveWithCard extends MoneyReceiverSystem {
     @Override
     public void getUserInput() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Card password: ");
 
-        try {
-            String password = sc.nextLine();
+        while (true) {
+            System.out.println("Enter Card password: ");
 
-            if (!password.equals(card.getPassword())) {
-                throw new InputMismatchException();
+            try {
+                String password = sc.nextLine();
+
+                if (!password.equals(card.getPassword())) {
+                    throw new InputMismatchException();
+                }
+
+                card.setPassword(password);
+                return;
+
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid Password");
+                System.out.println("Try again: ");
             }
-
-            card.setPassword(password);
-
-        } catch (InputMismatchException e) {
-            System.out.println("Invalid Password");
-            System.out.println("Try again: ");
         }
     }
 
