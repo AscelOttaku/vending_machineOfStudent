@@ -7,7 +7,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MoneyReceiveWithCard extends MoneyReceiverSystem {
-    private double balanceLimit;
     Card card;
 
     public MoneyReceiveWithCard() {
@@ -34,6 +33,7 @@ public class MoneyReceiveWithCard extends MoneyReceiverSystem {
         }
     }
 
+    @Override
     public void transfer(CoinAcceptor coinAcceptor) {
         coinAcceptor.setAmount((int) Math.round(card.getBalance()));
     }
