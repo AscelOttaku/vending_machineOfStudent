@@ -1,4 +1,4 @@
-package model;
+package model.Products;
 
 public class CoinAcceptor {
     private int amount;

@@ -1,4 +1,4 @@
-package model;
+package model.Products;
 
 import enums.ActionLetter;
 

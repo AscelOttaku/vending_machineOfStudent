@@ -1,7 +1,7 @@
 package Service;
 
 import enums.ActionLetter;
-import model.*;
+import model.Products.*;
 import util.UniversalArray;
 import util.UniversalArrayImpl;
 
