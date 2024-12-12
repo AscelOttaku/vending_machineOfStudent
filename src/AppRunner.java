@@ -1,5 +1,6 @@
-package Service;
-
+import Service.MoneyReceiveWithCard;
+import Service.MoneyReceiveWithCash;
+import Service.MoneyReceiverSystem;
 import enums.ActionLetter;
 import model.Products.*;
 import util.UniversalArray;
@@ -57,8 +58,11 @@ public class AppRunner {
            }
            switch (choice) {
                case "1":
-                   return new MoneyReceiveWithCard();
+                   MoneyReceiveWithCard moneyReceiveWithCard = new MoneyReceiveWithCard();
+                   System.out.println("Chase Card Method\nCard name: " + moneyReceiveWithCard.getCardName());
+                   return moneyReceiveWithCard;
                case "2":
+                   System.out.println("Chase Cash Method");
                    return new MoneyReceiveWithCash();
                default:
                    System.out.println("illegal argument was sent");
