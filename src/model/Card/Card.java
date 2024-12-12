@@ -8,6 +8,7 @@ public class Card {
     public Card(String cardName, String password, double balance) {
         this.cardName = cardName;
         this.password = password;
+        this.balance = balance;
     }
 
     public String getPassword() {
