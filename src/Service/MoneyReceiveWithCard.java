@@ -41,4 +41,8 @@ public class MoneyReceiveWithCard extends MoneyReceiverSystem {
     public void transfer(CoinAcceptor coinAcceptor) {
         coinAcceptor.setAmount((int) Math.round(card.getBalance()));
     }
+
+    public String getCardName() {
+        return card.getCardName();
+    }
 }
