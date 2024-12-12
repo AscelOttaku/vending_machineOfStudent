@@ -4,10 +4,12 @@ public class Card {
     private final String cardName;
     private String password;
     private double balance;
+    private final int cardIdentityNumber;
 
-    public Card(String cardName, String password, double balance) {
+    public Card(String cardName, String password, int identityNumber, double balance) {
         this.cardName = cardName;
         this.password = password;
+        cardIdentityNumber = identityNumber;
         this.balance = balance;
     }
 
@@ -25,5 +27,9 @@ public class Card {
 
     public String getCardName() {
         return cardName;
+    }
+
+    public int getCardIdentityNumber() {
+        return cardIdentityNumber;
     }
 }
