@@ -23,8 +23,6 @@ public class MoneyReceiveWithCard extends MoneyReceiverSystem {
 
     @Override
     public void getUserInput() {
-        Scanner sc = new Scanner(System.in);
-
         while (true) {
             String identity = getCorrectInput("Identity Number");
             String password = getCorrectInput("password");
