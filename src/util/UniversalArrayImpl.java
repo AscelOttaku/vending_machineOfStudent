@@ -34,7 +34,7 @@ public class UniversalArrayImpl<T> implements UniversalArray<T> {
     @Override
     public void delete(int index) {
         array[index] = null;
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             if (array[i] == null) {
                 Object tmp = array[i];
                 array[i] = array[i + 1];
