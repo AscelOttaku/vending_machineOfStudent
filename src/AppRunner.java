@@ -58,9 +58,8 @@ public class AppRunner {
            }
            switch (choice) {
                case "1":
-                   MoneyReceiveWithCard moneyReceiveWithCard = new MoneyReceiveWithCard();
-                   System.out.println("Chase Card Method\nCard name: " + moneyReceiveWithCard.getCardName());
-                   return moneyReceiveWithCard;
+                   System.out.println("Chase Card Method");
+                   return new MoneyReceiveWithCard();
                case "2":
                    System.out.println("Chase Cash Method");
                    return new MoneyReceiveWithCash();
