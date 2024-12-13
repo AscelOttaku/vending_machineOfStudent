@@ -1,0 +1,12 @@
+1 git init
+2 git add
+3 git commit -m ""
+4 git push origin master
+5 git branch
+6 git fetch
+7 git pull 
+8 git log
+git status
+10 git merge home-wrok-25
+11 git checkout main
+12 git amed
