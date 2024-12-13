@@ -7,8 +7,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MoneyReceiveWithCard extends MoneyReceiverSystem {
-    Card[] cards;
-    Card userCard;
+    private Card[] cards;
+    private Card userCard;
 
     public MoneyReceiveWithCard() {
        setCards();
