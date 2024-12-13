@@ -10,3 +10,4 @@ git status
 10 git merge home-wrok-25
 11 git checkout main
 12 git amed
+13 git clone
